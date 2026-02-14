@@ -1,0 +1,34 @@
+export default `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>DigitalBond</title>
+    <base href="/DigitalBond/"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" type="image/x-icon" href="./images/DB-logo.avif"/>
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <!-- PreFetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="preload" as="style" onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "/>
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <!-- Preload LCP -->
+    <link rel="preload" href="./images/hero/agency_figure.avif" as="image" fetchpriority="high"/>
+  <link rel="stylesheet" href="styles-5AV7AAUC.css"></head>
+  <body><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script>
+    <app-root></app-root>
+  <link rel="modulepreload" href="chunk-FLK6FTGM.js"><link rel="modulepreload" href="chunk-ZVRG2F7Q.js"><link rel="modulepreload" href="chunk-5QCQSK6D.js"><link rel="modulepreload" href="chunk-MNDQOKQF.js"><link rel="modulepreload" href="chunk-5UN6UYWD.js"><script src="main-VLBW6LEX.js" type="module"></script></body>
+</html>
+`;

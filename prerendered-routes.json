@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/DigitalBond": {},
+    "/DigitalBond/about": {},
+    "/DigitalBond/contact": {},
+    "/DigitalBond/home": {},
+    "/DigitalBond/testimonials": {}
+  }
+}
