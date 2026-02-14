@@ -1,0 +1,71 @@
+import { NgOptimizedImage } from '@angular/common';
+import { Component, computed, signal } from '@angular/core';
+// Primeng
+import { ButtonModule } from 'primeng/button';
+
+type Errors = {
+  required?: boolean;
+  minLength?: boolean;
+  email?: boolean;
+  pattern?: boolean;
+};
+
+@Component({
+  selector: 'app-contact-us',
+  imports: [NgOptimizedImage, ButtonModule],
+  templateUrl: './contact-us.html',
+  styleUrl: './contact-us.scss',
+})
+export class ContactUs {
+  name = signal('');
+  email = signal('');
+  phone = signal('');
+  website = signal('');
+
+  nameTouched = signal(false);
+  emailTouched = signal(false);
+  phoneTouched = signal(false);
+  websiteTouched = signal(false);
+
+  nameErrors = computed(() => ({
+    required: !this.name().trim(),
+    pattern: !/^[A-Za-z][A-Za-z\s'-]{2,}$/.test(this.name()),
+    invalidFormat: this.name().trim() && !/^[A-Za-z][A-Za-z\s'-]{2,}$/.test(this.name()),
+  }));
+
+  emailErrors = computed(() => ({
+    required: !this.email().trim(),
+    pattern: !/^[^\s@]+@[^\s@]+\.[A-Za-z]{3,}$/.test(this.email()),
+  }));
+
+  phoneErrors = computed<Errors>(() => ({
+    required: !this.phone().trim(),
+    pattern: !/^\d{8,}$/.test(this.phone()),
+  }));
+
+  websiteErrors = computed<Errors>(() => ({
+    required: !this.website().trim(),
+    pattern: !/^https?:\/\/.+/.test(this.website()),
+  }));
+
+  nameValid = computed(() => !Object.values(this.nameErrors()).includes(true));
+  emailValid = computed(() => !Object.values(this.emailErrors()).includes(true));
+  phoneValid = computed(() => !Object.values(this.phoneErrors()).includes(true));
+  websiteValid = computed(() => !Object.values(this.websiteErrors()).includes(true));
+
+  formValid = computed(
+    () => this.nameValid() && this.emailValid() && this.phoneValid() && this.websiteValid(),
+  );
+
+  submit(event: Event) {
+    event.preventDefault();
+    if (!this.formValid()) return;
+
+    console.log({
+      name: this.name(),
+      email: this.email(),
+      phone: this.phone(),
+      website: this.website(),
+    });
+  }
+}

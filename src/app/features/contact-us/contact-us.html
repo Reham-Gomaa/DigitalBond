@@ -1,0 +1,110 @@
+<section class="contact-us p-8 flex justify-content-evenly align-items-center">
+  <div class="relative z-0">
+    <div class="eclipse z-1">
+      <img
+        width="220"
+        height="220"
+        ngSrc="./images/contact/agency_elipse2.avif"
+        alt="decoration element"
+      />
+    </div>
+    <div class="track-line z-1">
+      <img
+        width="120"
+        height="144"
+        ngSrc="./images/contact/agency_fly_trajectory.avif"
+        alt="decoration element"
+      />
+    </div>
+
+    <div class="title relative z-5 flex flex-column justify-content-center px-4 lg:px-6">
+      <header>
+        <h1 class="hero-title relative text-7xl font-normal line-height-1 mt-0 mb-6">
+          Want To Bond !
+          <img
+            class="fly"
+            width="100"
+            height="50"
+            ngSrc="./images/contact/agency-fly.avif"
+            alt="decoration element"
+          />
+        </h1>
+        <p class="hero-p text-lg line-height-3 mb-0 max-w-25rem">Call Us For Fast Support</p>
+        <p class="mt-0">800 2563 123</p>
+      </header>
+    </div>
+  </div>
+  <div>
+    <form class="contact-form grid" (ngSubmit)="submit($event)">
+      <!-- Row 1 -->
+      <div class="col-12 md:col-6">
+        <input
+          type="text"
+          placeholder="Your Name*"
+          class="input"
+          [value]="name()"
+          (input)="name.set($any($event.target).value)"
+          (blur)="nameTouched.set(true)"
+        />
+
+        @if (nameTouched() && nameErrors().required) {
+          <small>Name is required</small>
+        }
+        @if (nameTouched() && nameErrors().invalidFormat) {
+          <small>Only letters allowed</small>
+        }
+      </div>
+
+      <div class="col-12 md:col-6">
+        <input
+          type="email"
+          placeholder="Email*"
+          class="input"
+          [value]="email()"
+          (input)="email.set($any($event.target).value)"
+          (blur)="emailTouched.set(true)"
+        />
+
+        @if (emailTouched() && !emailValid()) {
+          <small> Enter a valid email </small>
+        }
+      </div>
+
+      <!-- Row 2 -->
+      <div class="col-12 md:col-6">
+        <input
+          type="tel"
+          placeholder="Phone"
+          class="input"
+          [value]="phone()"
+          (input)="phone.set($any($event.target).value)"
+          (blur)="phoneTouched.set(true)"
+        />
+
+        @if (phoneTouched() && !phoneValid()) {
+          <small> Minimum 8 digits </small>
+        }
+      </div>
+
+      <div class="col-12 md:col-6">
+        <input
+          type="url"
+          placeholder="Website*"
+          class="input"
+          [value]="website()"
+          (input)="website.set($any($event.target).value)"
+          (blur)="websiteTouched.set(true)"
+        />
+
+        @if (websiteTouched() && !websiteValid()) {
+          <small> Enter a valid website URL </small>
+        }
+      </div>
+
+      <!-- Button -->
+      <div class="col-12 flex justify-content-center mt-6">
+        <button type="submit" class="submit-btn" [disabled]="!formValid()">SEND MESSAGE</button>
+      </div>
+    </form>
+  </div>
+</section>

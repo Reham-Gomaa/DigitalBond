@@ -1,0 +1,55 @@
+<section id="about" class="flex justify-content-evenly align-items-center">
+  <div class="images relative">
+    <picture class="left-img">
+      <source srcset="./images/about/agency_img4.avif" type="image/avif" />
+      <source srcset="./images/about/agency_img4.webp" type="image/webp" />
+      <img
+        ngSrc="./images/about/agency_img4.jpg"
+        width="360"
+        height="300"
+        alt="Woman presenting on white board"
+        loading="lazy"
+      />
+    </picture>
+    <picture class="right-img z-2">
+      <source srcset="./images/about/agency_img5.avif" type="image/avif" />
+      <source srcset="./images/about/agency_img5.webp" type="image/webp" />
+      <img
+        ngSrc="./images/about/agency_img5.jpg"
+        width="265"
+        height="216"
+        alt="Woman presenting on white board"
+        loading="lazy"
+      />
+    </picture>
+    <picture class="ideas-img z-1">
+      <source srcset="./images/about/agency_ideas_bg.avif" type="image/avif" />
+      <source srcset="./images/about/agency_ideas_bg.webp" type="image/webp" />
+      <img
+        ngSrc="./images/about/agency_ideas_bg.jpg"
+        width="200"
+        height="310"
+        alt="ideas with dot-line"
+        loading="lazy"
+      />
+    </picture>
+  </div>
+  <div>
+    @defer (on viewport) {
+      <div class="title relative flex flex-column justify-content-center px-4 lg:px-6">
+        <header>
+          <h1 class="about-title relative font-normal line-height-1 mb-5">WE ARE THE BONDERS!</h1>
+          <p class="about-p text-lg line-height-3 mb-5 max-w-25rem">
+            Bonders are a blend of cheerful, uprising and creative peeps working to deliver
+            outstanding services. We are committed and loyalty runs in the veins; when we are put
+            together our results blow minds.
+          </p>
+        </header>
+
+        <app-btn-trans />
+      </div>
+    } @placeholder {
+      <div style="min-height: 400px; width: 100%"></div>
+    }
+  </div>
+</section>

@@ -1,0 +1,108 @@
+.hero-container {
+  height: 100vh;
+  background-image: var(--hero-bg-gradient);
+  padding: 0.9375rem 3.125rem;
+
+  .container-custom {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .text-7xl {
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    letter-spacing: -2px;
+  }
+  .hero-title {
+    color: var(--hero-h);
+  }
+  .hero-p {
+    color: var(--hero-p);
+    line-height: 30px;
+  }
+
+  .element-W {
+    position: absolute;
+    top: -3.4375rem;
+    inset-inline-end: 12.1875rem;
+  }
+  .eclipse {
+    position: absolute;
+    top: 40px;
+    inset-inline-start: 0px;
+  }
+  .dot-line {
+    position: absolute;
+    top: 10%;
+    inset-inline-end: 15%;
+  }
+  .lamp {
+    position: absolute;
+    bottom: 7%;
+    inset-inline-start: 35%;
+    .lamp-img {
+      border-radius: 50%;
+      animation: lamp-glow 3s ease-in-out infinite;
+    }
+  }
+
+  .rocket {
+    position: absolute;
+    top: 21%;
+    inset-inline-end: 8.5%;
+    animation: rocket-wander 12s ease-in-out infinite;
+
+    .rocket-img {
+      // This creates the engine vibration/shaking
+      animation: rocket-vibrate 0.2s linear infinite;
+      transition: transform 0.3s ease-out;
+    }
+  }
+
+  .yellow-img {
+    filter: drop-shadow(0 0 6px rgb(255, 174, 0, 0.4)) brightness(1);
+  }
+  .blue-img {
+    filter: drop-shadow(0 0 6px rgb(0, 208, 255, 0.4)) brightness(1);
+  }
+  .pink-img {
+    filter: drop-shadow(0 0 6px rgb(255, 0, 55, 0.4)) brightness(1);
+  }
+
+  // Soft glow behind the text
+  .bg-glow {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 50%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(255, 255, 180, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: 1;
+  }
+}
+
+:host ::ng-deep .p-button-dark {
+  background: var(--hero-btn-bg) !important;
+  border-color: var(--hero-btn-border-color) !important;
+  outline: #1a1a1a !important;
+
+  &:hover {
+    background: transparent !important;
+    color: var(--hero-btn-hover-text) !important;
+  }
+}
+
+// Responsive adjustments for the staggered grid
+@media screen and (max-width: 991px) {
+  .hero-container {
+    padding-top: 5rem;
+    text-align: center;
+
+    .flex.flex-column {
+      align-items: center;
+    }
+
+    .text-lg {
+      margin-inline: auto;
+    }
+  }
+}

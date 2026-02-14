@@ -1,0 +1,46 @@
+:host ::ng-deep .smooth-carousel-root {
+  background: var(--p-dark-900);
+
+  .p-carousel-items-content {
+    overflow: hidden;
+  }
+
+  .p-carousel-item-list {
+    display: flex !important;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+    will-change: transform;
+  }
+
+  .p-carousel-item {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    padding: 0 2rem;
+  }
+
+  &:hover .p-carousel-item-list {
+    animation-play-state: paused;
+  }
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 15px 0;
+  color: white;
+}
+
+.separator {
+  font-size: 0.8rem;
+  color: var(--serv-star-fill);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,32 @@
+<nav class="nav-body" aria-label="Main Navigation">
+  <div class="card">
+    <p-menubar [model]="items">
+      <ng-template #start>
+        <picture>
+          <source srcset="./images/DB-logo.avif" type="image/avif" />
+          <source srcset="./images/DB-logo.webp" type="image/webp" />
+          <img
+            width="75"
+            height="50"
+            ngSrc="./images/DB-logo.jpg"
+            alt="Digital Bond Home"
+            class="block"
+          />
+        </picture>
+      </ng-template>
+
+      <div role="menu" class="flex gap-3">
+        <ng-template #item let-item let-root="root">
+          <a
+            [routerLink]="item.routerLink"
+            class="nav-links no-underline"
+            role="menuitem"
+            [attr.aria-label]="item.label"
+          >
+            {{ item.label }}
+          </a>
+        </ng-template>
+      </div>
+    </p-menubar>
+  </div>
+</nav>

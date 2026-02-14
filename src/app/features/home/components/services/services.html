@@ -1,0 +1,19 @@
+<p-carousel
+  [value]="services()"
+  [numVisible]="5"
+  [numScroll]="1"
+  circular="true"
+  [autoplayInterval]="0"
+  showIndicators="false"
+  showNavigators="false"
+  [pt]="{
+    root: { class: 'smooth-carousel-root' },
+  }"
+>
+  <ng-template let-service #item>
+    <div class="marquee-item">
+      <span class="label">{{ service.name }}</span>
+      <i class="pi pi-star-fill separator"></i>
+    </div>
+  </ng-template>
+</p-carousel>

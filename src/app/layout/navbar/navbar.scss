@@ -1,0 +1,62 @@
+.nav-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.9375rem 3.125rem;
+}
+
+.nav-link-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav-links {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--nav-link);
+  margin-inline: 1.125rem;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  display: inline-block;
+}
+
+:host ::ng-deep {
+  .p-menubar-item-link {
+    color: var(--nav-link);
+    transition: all 0.3s ease;
+  }
+
+  .p-menubar-item-link:hover,
+  .p-menubar-item-link-active {
+    background: var(--nav-link-active);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.p-menubar {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+
+  .p-menubar-root-list {
+    display: flex;
+    align-items: center;
+  }
+}

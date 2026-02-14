@@ -1,0 +1,99 @@
+:root {
+  /* Font */
+  --font-1: 'Rubik', sans-serif;
+
+  /* Color Pallette */
+
+  /* Neutrals & Surfaces */
+  --p-white: #ffffff;
+  --p-ghost-white: #fbfeff;
+  --p-gray-50: #f0f0f0;
+  --p-gray-100: #ced3d9;
+  --p-gray-200: #bec9d2;
+
+  /* Darks & Deep Blues */
+  --p-dark-100: #696687;
+  --p-dark-500: #3b3663;
+  --p-dark-800: #1a233e;
+  --p-dark-900: #0f110f;
+
+  /* Brand Blues */
+  --p-blue-700: #092f6c;
+
+  /* Accents / Pastels */
+  --p-yellow-50: #fbf2d9;
+  // --p-yellow-50: #fff9e8;
+  --p-yellow-100: #ffe7b5;
+  --p-pink-100: #ffd1db;
+  --p-cyan-50: #e9f8ff;
+  --p-cyan-100: #b9e8f2;
+  --p-cyane-200: #88c0d0;
+  // --p-cyane-200: #52a4bb;
+
+  /* Status / Action */
+  --p-orange-500: #f3613c;
+  --p-red-500: #e72322;
+
+  /* Vibrant Brand Palette (The Quad Gradient) */
+  --p-vibrant-orange: #eb643f;
+  --p-vibrant-purple: #964c9a;
+  --p-vibrant-amber: #fc7300;
+  --p-vibrant-pink: #f8007a;
+  --p-vibrant-amber2: #f8801ee4;
+
+  /* Navbar */
+  --nav-link: var(--p-dark-900);
+  --nav-link-active: linear-gradient(
+    to right,
+    var(--p-vibrant-orange) 0%,
+    var(--p-vibrant-purple) 33%,
+    var(--p-vibrant-amber) 66%,
+    var(--p-vibrant-pink) 100%
+  );
+
+  /* Hero */
+  --hero-bg-gradient: linear-gradient(
+    to bottom right,
+    var(--p-yellow-100) 0%,
+    var(--p-cyan-100) 75%,
+    var(--p-yellow-100) 100%
+  );
+  --hero-h: var(--p-dark-900);
+  --hero-p: var(--p-dark-100);
+  --hero-btn-text-color: var(--p-white);
+  --hero-btn-bg: var(--p-dark-900);
+  --hero-btn-border-color: var(--p-dark-900);
+  --hero-btn-hover-text: var(--p-dark-900);
+
+  /* Services */
+  --serv-text-color: var(--p-white);
+  --serv-star-fill: var(--p-white);
+  --serv-carousel-bg: var(--p-pink-100);
+
+  /* About Us */
+  --about-bg-gradient: linear-gradient(
+    to bottom right,
+    var(--p-yellow-50) 0%,
+    var(--p-cyan-50) 70%
+  );
+  --about-h-text-color: var(--p-dark-900);
+  --about-p-text-color: var(--p-dark-100);
+
+  /* Btn-Transparent */
+  --shared-btn-text-color: var(--p-dark-900);
+  --shared-btn-border-color: var(--p-dark-900);
+  --shared-btn-hover-bg: var(--p-dark-900);
+  --shared-btn-hover-text: var(--p-white);
+
+  /* Testimonials */
+  --test-bg: var(--p-cyan-100);
+  --test-star-fill: var(--p-vibrant-amber2);
+
+  /* Contact Us */
+  --contact-bg-gradient: linear-gradient(to right, var(--p-yellow-50) 0%, var(--p-cyan-50) 70%);
+
+  /* Footer */
+  --footer-bg: var(--p-dark-900);
+  --footer-link: var(--p-white);
+  --footer-link-hover: var(--p-orange-500);
+}

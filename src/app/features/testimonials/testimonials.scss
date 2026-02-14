@@ -1,0 +1,42 @@
+.testimonials {
+  position: relative; // Needed for the absolute pseudo-element
+  background-color: var(--test-bg); // Keep your base color here
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // Move the background image here
+    background-image: url('/images/1cm Dots.avif');
+    background-repeat: repeat;
+
+    /* --- THE MAGIC BITS --- */
+    opacity: 0.3; // Adjust this value (0.1 to 1.0) to your liking
+    z-index: 0; // Keeps it behind the content
+  }
+
+  .card {
+    position: relative;
+    z-index: 1; // Ensure content stays above the faded background
+  }
+}
+
+.img-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+  }
+}
+
+.rating {
+  font-size: 0.8rem;
+  color: var(--test-star-fill) !important;
+  text-align: center;
+}

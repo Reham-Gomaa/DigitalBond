@@ -1,0 +1,31 @@
+.bg-black-900 {
+  background-color: var(--footer-bg);
+}
+
+.tel-link {
+  &:hover {
+    color: var(--footer-link-hover);
+  }
+}
+
+.footer-link {
+  color: var(--surface-200);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--footer-link-hover);
+  }
+}
+
+// Ensure the container matches your hero section width
+.container-custom {
+  max-width: 1400px;
+}
+
+// Accessibility: Visual focus for keyboard users
+.footer-link:focus-visible {
+  outline: 2px solid var(--footer-link);
+  outline-offset: 4px;
+}

@@ -1,0 +1,86 @@
+@keyframes lamp-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(255, 159, 0, 0.1)) brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 13px rgba(255, 159, 0)) drop-shadow(0 0 28px rgba(255, 159, 0))
+      brightness(1.3);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes rocket-wander {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-30px, -50px) rotate(-5deg);
+  }
+  40% {
+    transform: translate(20px, -100px) rotate(10deg);
+  }
+  60% {
+    transform: translate(-50px, -150px) rotate(-10deg);
+  }
+  80% {
+    transform: translate(10px, -70px) rotate(5deg);
+  }
+}
+
+@keyframes rocket-vibrate {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0.5px, 0.5px);
+  }
+  50% {
+    transform: translate(-0.5px, 0.5px);
+  }
+  75% {
+    transform: translate(0.5px, -0.5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes customSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes flyAcross {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+    transform: translate(20px, -10px) rotate(5deg) scale(1);
+  }
+  /* Mid-flight: Bobbing up and down while moving across */
+  35% {
+    transform: translate(200px, -40px) rotate(-10deg);
+  }
+  65% {
+    transform: translate(450px, 20px) rotate(10deg);
+  }
+  /* End-flight: Flying off the screen/container */
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(650px, -70px) rotate(20deg) scale(0.9);
+    opacity: 0;
+  }
+}

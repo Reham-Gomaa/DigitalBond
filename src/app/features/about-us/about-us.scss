@@ -1,0 +1,38 @@
+#about {
+  overflow-x: hidden;
+  background-image: var(--about-bg-gradient);
+  padding: 100px 0;
+}
+
+.left-img {
+  position: relative;
+  top: 0;
+  inset-inline-start: -55%;
+}
+.right-img {
+  position: absolute;
+  top: 8px;
+  inset-inline-start: 20%;
+  filter: drop-shadow(0 0 10px rgb(105, 102, 135, 0.7)) brightness(1);
+  transition: transform 0.3s ease;
+}
+.right-img img:hover {
+  transform: translateY(-5px);
+}
+
+.ideas-img {
+  position: absolute;
+  top: -0.3125rem;
+  inset-inline-start: 50%;
+}
+
+.title {
+  animation: customSlideLeft 1s ease-out forwards;
+}
+
+.about-title {
+  color: var(--about-h-text-color);
+}
+.about-p {
+  color: var(--about-p-text-color);
+}
