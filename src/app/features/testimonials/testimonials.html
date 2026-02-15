@@ -1,4 +1,4 @@
-<section class="testimonials py-3">
+<section class="testimonials" [class]="isStandalone() ? 'py-8' : 'py-3'">
   <div class="card border-none shadow-none bg-transparent">
     <p-carousel
       [value]="reviews()"

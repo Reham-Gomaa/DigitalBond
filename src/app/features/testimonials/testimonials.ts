@@ -1,5 +1,6 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
+import { Router } from '@angular/router';
 // Primeng
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
@@ -12,6 +13,9 @@ import { TagModule } from 'primeng/tag';
   styleUrl: './testimonials.scss',
 })
 export class Testimonials implements OnInit {
+  private _router = inject(Router);
+  isStandalone = signal(this._router.url === '/testimonials');
+
   reviews = signal<any[]>([]);
   responsiveOptions: any[] | undefined;
 

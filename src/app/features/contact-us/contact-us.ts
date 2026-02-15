@@ -1,6 +1,7 @@
 import { FormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
+import { Router } from '@angular/router';
 // Primeng
 import { ButtonModule } from 'primeng/button';
 
@@ -18,6 +19,9 @@ type Errors = {
   styleUrl: './contact-us.scss',
 })
 export class ContactUs {
+  private _router = inject(Router);
+  isStandalone = signal(this._router.url === '/contact');
+
   name = signal('');
   email = signal('');
   phone = signal('');
