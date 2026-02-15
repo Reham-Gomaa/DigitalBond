@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
 // Primeng
@@ -12,7 +13,7 @@ type Errors = {
 
 @Component({
   selector: 'app-contact-us',
-  imports: [NgOptimizedImage, ButtonModule],
+  imports: [NgOptimizedImage, ButtonModule, FormsModule],
   templateUrl: './contact-us.html',
   styleUrl: './contact-us.scss',
 })
@@ -61,11 +62,24 @@ export class ContactUs {
     event.preventDefault();
     if (!this.formValid()) return;
 
+    // Save/Log the data
     console.log({
       name: this.name(),
       email: this.email(),
       phone: this.phone(),
       website: this.website(),
     });
+
+    // Clear inputs
+    this.name.set('');
+    this.email.set('');
+    this.phone.set('');
+    this.website.set('');
+
+    // Reset touched state to prevent showing validation errors on empty form
+    this.nameTouched.set(false);
+    this.emailTouched.set(false);
+    this.phoneTouched.set(false);
+    this.websiteTouched.set(false);
   }
 }

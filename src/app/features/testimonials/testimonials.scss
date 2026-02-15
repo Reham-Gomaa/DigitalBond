@@ -1,6 +1,6 @@
 .testimonials {
-  position: relative; // Needed for the absolute pseudo-element
-  background-color: var(--test-bg); // Keep your base color here
+  position: relative; 
+  background-color: var(--test-bg); 
   overflow: hidden;
 
   &::before {
@@ -10,13 +10,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    // Move the background image here
-    background-image: url('/images/1cm Dots.avif');
+    background-image: url('../../../../public/images/1cm Dots.avif');
     background-repeat: repeat;
-
-    /* --- THE MAGIC BITS --- */
-    opacity: 0.3; // Adjust this value (0.1 to 1.0) to your liking
-    z-index: 0; // Keeps it behind the content
+    opacity: 0.3; 
+    z-index: 0; 
   }
 
   .card {

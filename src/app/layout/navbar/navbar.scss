@@ -32,10 +32,26 @@
   display: inline-block;
 }
 
+:host {
+    --p-menubar-item-focus-background: transparent;
+    --p-menubar-item-hover-background: transparent;
+    --p-menubar-item-active-background: transparent;
+}
+
 :host ::ng-deep {
   .p-menubar-item-link {
     color: var(--nav-link);
     transition: all 0.3s ease;
+  }
+
+  // Ensure background is transparent using classes as backup
+  .p-menubar .p-menuitem-content,
+  .p-menubar .p-menuitem-link,
+  .p-menubar .p-menuitem.p-focus > .p-menuitem-content,
+  .p-menubar .p-menuitem-link:focus,
+  .p-menubar .p-menuitem-link:hover {
+      background: transparent !important;
+      box-shadow: none !important;
   }
 
   .p-menubar-item-link:hover,

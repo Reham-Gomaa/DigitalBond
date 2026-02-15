@@ -91,11 +91,16 @@
   }
 }
 
-// Responsive adjustments for the staggered grid
+// Responsive adjustments
+
+// < 62rem (max-width: 991px) - Tablet/Small Desktop
 @media screen and (max-width: 991px) {
   .hero-container {
     padding-top: 5rem;
     text-align: center;
+    height: auto; // Allow height to grow
+    min-height: 100vh;
+    padding-bottom: 2rem;
 
     .flex.flex-column {
       align-items: center;
@@ -104,5 +109,166 @@
     .text-lg {
       margin-inline: auto;
     }
+
+    // Adjust decorative elements positioning for tablet
+    .element-W {
+      top: -3rem;
+      inset-inline-end: 10%;
+    }
+  }
+}
+
+// < 48rem (max-width: 767px) - Mobile Landscape/Small Tablet
+@media screen and (max-width: 767px) {
+  .hero-container {
+    padding: 2rem 1.5rem;
+
+    .text-7xl {
+      font-size: 3.5rem; // Smaller title
+    }
+
+    .hero-btn {
+      justify-content: center;
+      width: 100%;
+    }
+
+    // Hide or adjust large decorative elements
+    .rocket {
+      top: 5%;
+      inset-inline-end: 5%;
+      transform: scale(0.7);
+    }
+
+    .lamp {
+      bottom: 5%;
+      inset-inline-start: 5%;
+      transform: scale(0.7);
+    }
+
+    .dot-line {
+      display: none; // Hide complex background on small screens to clean up UI
+    }
+  }
+}
+
+// < 500px (max-width: 499px) - Mobile Portrait
+@media screen and (max-width: 499px) {
+  .hero-container {
+    padding: 1.5rem 1rem;
+
+    .text-7xl {
+      font-size: 2.5rem; // Even smaller for mobile
+      margin-bottom: 1.5rem !important;
+    }
+
+    .element-W {
+      width: 30px;
+      height: auto;
+      top: -1.5rem;
+      inset-inline-end: 0;
+    }
+
+    .hero-p {
+      font-size: 1rem !important;
+      line-height: 1.5;
+      margin-bottom: 2rem !important;
+    }
+
+    // Adjust image grid spacing
+    .images {
+      margin-top: 3rem !important;
+    }
+
+    .eclipse {
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+// Tablet and Small Desktop (48rem to < xl)
+@media screen and (max-width: 992px) {
+  .hero-container {
+    .eclipse {
+       top: 1.25rem;
+       inset-inline-start: 20%;
+    }
+    
+    .dot-line {
+       top: 60%;
+       inset-inline-end: 28%;
+       width: 400px;
+       height: auto;
+       img {
+        width: 30rem;
+        height: 17.8125rem;
+       }
+    }
+    
+    .lamp {
+       bottom: 20%;
+       inset-inline-start: 10%; 
+    }
+    
+    .rocket {
+       top: 15%;
+       inset-inline-end: 2%;
+    }
+  }
+}
+@media screen and (min-width: 992px) {
+  .hero-container {
+    .eclipse {
+       top: 2rem;
+       inset-inline-start: -2rem;
+    }
+    
+     .dot-line {
+    position: absolute;
+    top: 10%;
+    inset-inline-end: 15%;
+  }
+  .lamp {
+    position: absolute;
+    bottom: 7%;
+    inset-inline-start: 35%;
+    .lamp-img {
+      border-radius: 50%;
+      animation: lamp-glow 3s ease-in-out infinite;
+    }
+  }
+    
+    .rocket {
+       top: 15%;
+       inset-inline-end: 2%;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1389px) {
+  .hero-container {
+    .element-W,
+    .dot-line,
+    .lamp {
+      display: none;
+    }
+  }
+}
+
+// XL Screens (min-width: 1200px)
+@media screen and (min-width: 1200px) {
+  .container-custom {
+    max-width: 1400px;
+  }
+
+  .hero-container {
+    // Ensure elements don't spread too wide
+    display: flex;
+    align-items: center;
+     .element-W {
+    inset-inline-end: 12.1875rem;
+  }
   }
 }
