@@ -1,7 +1,9 @@
 import { FormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
+// Services
+import { SeoMetaData } from '../../core/services/seo/seo-meta-data';
 // Primeng
 import { ButtonModule } from 'primeng/button';
 
@@ -18,9 +20,17 @@ type Errors = {
   templateUrl: './contact-us.html',
   styleUrl: './contact-us.scss',
 })
-export class ContactUs {
+export class ContactUs implements OnInit {
+  private _seoMetaData = inject(SeoMetaData);
   private _router = inject(Router);
   isStandalone = signal(this._router.url === '/contact');
+
+  ngOnInit(): void {
+    this._seoMetaData.update(
+      'Contact Us',
+      'Connect with Digital Bond. Call us for support or inquiries about our services.',
+    );
+  }
 
   name = signal('');
   email = signal('');

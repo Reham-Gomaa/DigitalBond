@@ -1,6 +1,8 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { Router } from '@angular/router';
+// Services
+import { SeoMetaData } from '../../core/services/seo/seo-meta-data';
 // Primeng
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
@@ -13,6 +15,7 @@ import { TagModule } from 'primeng/tag';
   styleUrl: './testimonials.scss',
 })
 export class Testimonials implements OnInit {
+  private _seoMetaData = inject(SeoMetaData);
   private _router = inject(Router);
   isStandalone = signal(this._router.url === '/testimonials');
 
@@ -20,6 +23,11 @@ export class Testimonials implements OnInit {
   responsiveOptions: any[] | undefined;
 
   ngOnInit() {
+    this._seoMetaData.update(
+      'Testimonials',
+      'See what our clients say about our SEO, social media, and branding services.',
+    );
+
     this.reviews.set([
       {
         id: '1',
